@@ -1,0 +1,37 @@
+
+.title_text_color{
+    color: #1C4071;
+}
+
+
+.colorbody{
+    background-color: beige;
+}
+
+
+.header_register {
+color: springgreen;
+    background-color: #1C4071;
+}
+
+
+
+
+
+.rounded_border_top {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+
+.rounded_border_bottom {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.rounded_border_all {
+    border-radius: 12px;
+
+}
+
+

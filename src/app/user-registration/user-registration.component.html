@@ -1,0 +1,243 @@
+<div class="container p-md-2 ">
+
+
+  <div class="row  mt-md-5  d-none d-sm-block ">
+    <div class="col text-center ">
+      <h3 class="title_text_color"><b>Form Di Registrazione </b>   </h3>
+    </div>
+  </div>
+
+
+  <div class="row p-md-5 p-0 mt-2">
+    <div class="col">
+
+      <div class="card  colorbody">
+        <div class="card-header text-center header_register   ">Register</div>
+        <div class="card-body card_head colorbody p-4">
+
+
+          <form [formGroup]="form" (submit)="onUserRegistration()" class="needs-validation was-validated" >
+
+            <div class="form-group">
+
+              <div class="input-group input-group-md ">
+                <div class="input-group-prepend ">
+                  <span class="input-group-text  rounded_border_all">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control rounded_border_all form-control-sm" formControlName="nome"
+                  placeholder="Il tuo nome">
+              </div>
+              <small *ngIf="form.get('nome').invalid && (form.get('nome').dirty || form.get('nome').touched) "
+                class="ml-5 form-text text-danger">Campo obbligatorio *</small>
+            </div>
+
+
+
+            <div class="form-group">
+          
+              <div class="input-group input-group-md">
+                <div class="input-group-prepend">
+                  <span class="input-group-text rounded_border_all">
+                    <i class="fas fa-user">
+                    </i>
+                  </span>
+                </div>
+                <input type="text" class="form-control form-control-sm rounded_border_all" placeholder="Il tuo cognome"
+                  formControlName="cognome" >
+              </div>
+              <small *ngIf="form.get('cognome').invalid && (form.get('cognome').dirty || form.get('cognome').touched)"
+                class="ml-5 form-text text-danger">Campo obbligatorio *</small>
+            </div>
+
+
+
+            <div class="form-group">
+            
+              <div class="input-group input-group-md">
+                <div class="input-group-prepend">
+                  <span class="input-group-text rounded_border_all">
+                    <i class="far fa-address-card"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control form-control-sm rounded_border_all" placeholder="Il tuo C.F" formControlName="cf"
+                  >
+              </div>
+              <small *ngIf="(form.get('cf').invalid && ( form.get('cf').touched))"
+                class="ml-5 form-text text-danger">Valore non corretto *</small>
+            </div>
+
+
+
+            <div class="form-group">
+           
+              <div class="input-group input-group-md">
+                <div class="input-group-prepend">
+                  <span class="input-group-text rounded_border_all">
+                    <i class="fas fa-info">
+                    </i>
+                  </span>
+                </div>
+                <input type="number" class="form-control form-control-sm rounded_border_all" placeholder="La tua età"
+                  formControlName="eta">
+              </div>
+              <small *ngIf="form.get('eta').invalid && (form.get('eta').dirty || form.get('eta').touched)"
+                class="ml-5 form-text text-danger">Età minore di 18 *</small>
+            </div>
+
+            <div class="form-group">
+         
+              <div class="input-group input-group-md">
+                <div class="input-group-prepend">
+                  <span class="input-group-text rounded_border_all">
+                    <i class="fas fa-phone-square"></i>
+                  </span>
+                </div>
+                <input type="tel" class="form-control form-control-sm rounded_border_all" placeholder="Numero di telefono"
+                  formControlName="telefono">
+              </div>
+              <small
+                *ngIf="form.get('telefono').invalid && (form.get('telefono').dirty || form.get('telefono').touched)"
+                class="ml-5 form-text text-danger">Campo obbligatorio *</small>
+            </div>
+
+
+
+            <div class="form-group">
+    
+              <div class="input-group input-group-md">
+                <div class="input-group-prepend">
+                  <span class="input-group-text rounded_border_all">
+                    <i class="fa fa-envelope-square">
+                    </i>
+                  </span>
+                </div>
+                <input type="email" class="form-control form-control-sm rounded_border_all" placeholder="La tua email" autocomplete="email"
+                  formControlName="email" >
+              </div>
+              <small *ngIf="form.get('email').invalid && (form.get('email').dirty || form.get('email').touched)"
+                class="ml-5 form-text text-danger">Campo obbligatorio *</small>
+            </div>
+
+
+            <div class="form-group">
+           
+              <div class="input-group input-group-md">
+                <div class="input-group-prepend">
+                  <span class="input-group-text rounded_border_all">
+                    <i class="fas fa-key">
+                    </i>
+                  </span>
+                </div>
+                <input type="password" class="form-control form-control-sm rounded_border_all" placeholder="Nuova password"
+                  autocomplete="current-password" formControlName="nuovaPassword">
+              </div>
+              <small
+                *ngIf="form.get('nuovaPassword').invalid && (form.get('nuovaPassword').dirty || form.get('nuovaPassword').touched)"
+                class="ml-5 form-text text-danger">Inserire almeno 6 caratteri *</small>
+            </div>
+
+
+            <div class="form-group">
+
+              <div class="input-group input-group-md">
+                <div class="input-group-prepend">
+                  <span class="input-group-text rounded_border_all">
+                    <i class="fas fa-key">
+                    </i>
+                  </span>
+                </div>
+                <input type="password" class="form-control form-control-sm rounded_border_all" placeholder="Ripeti password"
+                  autocomplete="current-password" formControlName="password">
+              </div>
+              <small
+                *ngIf="form.get('password').value !==  form.get('nuovaPassword').value && form.get('password').dirty"
+                class="ml-5 form-text text-danger">Password non corrispondente *</small>
+            </div>
+
+            <button *ngIf="!hideButton" class="btn btn-outline-primary rounded_border_all btn-rounded btn-block my-4" type="submit"
+              [disabled]="!form.valid">Registrami</button>
+
+            <div *ngIf="hideButton" class="alert alert-success alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert">×</button>
+              <strong>Success!</strong> Registrazione andata a buon fine! Adesso puoi effettuare il Login
+              <button class="btn btn-sm btn-primary rounded_border_all" routerLink="/login" > Login </button>
+            </div>
+
+            <div *ngIf="userExsist"  class="alert alert-danger alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert">×</button>
+              <strong>Errore!</strong> Utente già registrato con la e-mail fornita. Inserire un'altra e-mail!
+            </div>
+
+          </form>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="col ">
+
+
+      <div class="card mt-3 mt-md-0">
+        <div class="card-header  text-center header_register ">Area Informazioni</div>
+        <div class="card-body colorbody ">
+
+
+          <p class="font-italic small p-2">
+            Questa pagina permette la registrazione di un utente. Con la registrazione effettuata verranno informati gli
+            amministratori della richiesta di registrazione , i quali provvederanno
+            con la generazione e l'assegnazione del proprio codice QR.
+            Dopo la registrazione, nel frattempo sarà possibile effettuare il login con la propria Email
+            e la Password fornita. Una volta effettuato il login è possibile visitare la propria area utente dove verrà
+            mostrato lo stato
+            della registrazione. Solo dopo la conferma di un utente amministratore sarà possibile visualizzare il codice
+            QR nella propria area utente.
+            La notifica dell'assegnazione del codice QR avverrà mediante Email fornita nella registrazione.
+          </p>
+
+
+
+
+          <div class="card-deck mt-4">
+            <div class="card bg-light">
+              <div class="card-body ">
+                <strong>
+                  <p class="card-text text-center pb-4">I Dati Della Registrazione</p>
+                </strong>
+
+
+                <h6> <small> <strong>Nome:</strong> {{user?.nome}} </small> </h6>
+                <h6> <small> <strong>Cognome:</strong> {{user?.cognome}} </small> </h6>
+                <h6> <small> <strong>C.F:</strong> {{user?.cf}} </small> </h6>
+                <h6> <small> <strong>Età:</strong> {{user?.eta}} </small> </h6>
+                <h6> <small> <strong>Telefono:</strong> {{user?.telefono}} </small> </h6>
+                <h6> <small> <strong>Email:</strong> {{user?.email}} </small> </h6>
+                <h6> <small> <strong>QR code:</strong> Non ancora disponibile </small> </h6>
+                <h6> <small> <strong>Autorizzato:</strong> In attesa... </small> </h6>
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+
+</div>

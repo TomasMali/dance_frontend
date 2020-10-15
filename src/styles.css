@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files 
+
+
+@import url(http://fonts.googleapis.com/css?family=Times:400,300,700);
+
+*/
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+
+
+body{
+    background-color: #E9ECEF;
+    font-family: 'Oswald', sans-serif !important;
+}
+
+
