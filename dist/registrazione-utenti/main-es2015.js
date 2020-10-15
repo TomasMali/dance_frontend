@@ -1286,7 +1286,7 @@ let UserService = class UserService {
     constructor(http, router) {
         this.http = http;
         this.router = router;
-        this.urlUser = "http://3.125.115.179/user/";
+        this.urlUser = "http://18.192.194.134/api/user/";
         this.users = [];
         this.usersUpdated = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         this.userUpdated = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
